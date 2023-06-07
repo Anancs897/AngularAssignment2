@@ -1,0 +1,35 @@
+.user-details{
+    border: 2px solid black;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+    max-width: 60vw;
+    margin:auto;
+}
+
+.my-img{
+    display: block;
+    width: 40%;
+    /* height: 50%; */
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+.card{
+    width: 24rem;
+    margin: auto;
+}
+
+@media screen and (max-width:400px)  {
+    .card{
+        width: 18rem;
+    }
+    
+}

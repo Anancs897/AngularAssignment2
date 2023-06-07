@@ -1,0 +1,30 @@
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">User data</h5>
+          
+        </div>
+        <div class="modal-body">
+            
+            <img [src]="image" alt="" class="my-img" >
+            <ul>
+                <li><b> Name:</b> &nbsp;{{data.name}}</li>
+                <li> <b>Gender:</b>  &nbsp;{{data.gender}}</li>
+                <li> <b>Email:</b>  &nbsp;{{data.email}}</li>
+                <li> <b>Mobile:</b>  &nbsp;{{data.mobile}}</li>
+                <li> <b>Category:</b>  &nbsp;{{data.category}}</li>
+                <li> <b>Skills</b></li>
+                <li> <span *ngIf="data.ccheck">C &nbsp; </span> <span *ngIf="data.cpluscheck">C++ &nbsp; </span> <span *ngIf="data.pythoncheck">Python &nbsp; </span> <span *ngIf="data.javacheck">Java &nbsp; </span> <span *ngIf="data.jscheck">Javascript &nbsp; </span>  </li>
+            </ul>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeFunction()" >Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveData()" >Save changes</button>
+        </div>
+      </div>
+    </div>
+
+
+ 

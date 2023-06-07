@@ -1,0 +1,170 @@
+<div class="form-container bg-light ">
+
+    <form [formGroup]="createUserForm">
+        <div class="mb-2  mt-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
+                formControlName="name">
+
+            <span class="err" *ngIf="name && name.invalid && name.touched">Name is invalid</span>
+        </div>
+
+
+
+        <div>
+
+            <div class="mb-1 mt-4">Gender</div>
+            <span class="maleGender">
+                <label class="form-check-label " for="male">
+                    Male &nbsp;
+                </label>
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male"
+                    formControlName="gender">
+            </span>
+
+
+            <span class="femaleGender">
+                <label class="form-check-label" for="female">
+                    Female &nbsp;
+                </label>
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female"
+                    formControlName="gender">
+            </span>
+            <p><span class="err" *ngIf="gender && gender.invalid && gender.touched">Please select a gender</span></p>
+
+
+
+        </div>
+
+        <div class="mb-2">
+            <label for="myemail" class="form-label">Email</label>
+            <input type="text" class="form-control" id="myemail" aria-describedby="emailHelp" name="email"
+                formControlName="email">
+
+            <span class="err" *ngIf="email && email.invalid && email.touched">Email is invalid</span>
+        </div>
+
+
+
+
+
+        <div class="mb-2 mt-2">
+            <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="mobile" formControlName="mobile">
+            <span class="err" *ngIf="mobile && mobile.invalid && mobile.touched">Mobile is invalid</span>
+        </div>
+
+        <div class="dropdown mb-3">
+            <select name="category" id="" formControlName="category">
+                <option value="" selected disabled>Category</option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC/ST">SC/ST</option>
+            </select>
+            <p>
+                <span class="err" *ngIf="category && category.invalid && category.touched">Please select Category</span>
+            </p>
+
+        </div>
+
+        <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="cLang" name="ccheck" formControlName="ccheck"
+                    value="C">
+                <label class="form-check-label" for="cLang">
+                    C
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="cplus" name="cpluscheck"
+                    formControlName="cpluscheck" value="C++">
+                <label class="form-check-label" for="cplus">
+                    C++
+                </label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="java" name="javacheck" formControlName="javacheck">
+                <label class="form-check-label" for="java">
+                    Java
+                </label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="python" name="pythoncheck"
+                    formControlName="pythoncheck">
+                <label class="form-check-label" for="python">
+                    Python
+                </label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="js" name="jscheck" formControlName="jscheck">
+                <label class="form-check-label" for="js">
+                    Javascript
+                </label>
+            </div>
+
+            <div class="file mt-4  mb-4">
+                Upload File
+
+                <input type="file" accept="image/png, image/jpg, image/jpeg" (change)="selectfile($event)">
+            </div>
+        </div>
+
+        <div class="mt-2  mb-4">
+            <button type="submit" class="btn btn-primary" (click)="open()">Preview</button>
+        </div>
+
+    </form>
+</div>
+
+
+<!-- Button trigger modal -->
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <img [src]="url" alt="" class="my-img">
+
+
+                <div class="modal-body">
+
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Name:&nbsp;&nbsp; {{createUserForm.value.name}}
+                        </li>
+                        <li class="list-group-item">Gender:&nbsp;&nbsp; {{createUserForm.value.gender}} </li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;  {{createUserForm.value.email}} </li>
+                        <li class="list-group-item">Mobile:&nbsp;&nbsp; {{createUserForm.value.mobile}} </li>
+                        <li class="list-group-item">Category: &nbsp;&nbsp; {{createUserForm.value.category}} </li>
+                        
+
+
+                        <li class="list-group-item">Skills</li>
+                        <li class="list-group-item">
+                        <span *ngIf="createUserForm.value.ccheck" >C   &nbsp;&nbsp;   </span>
+                        <span *ngIf="createUserForm.value.cpluscheck" >C++  &nbsp;&nbsp; </span>
+                        <span *ngIf="createUserForm.value.pythoncheck" >Python  &nbsp;&nbsp; </span>
+                        <span *ngIf="createUserForm.value.javacheck" >Java  &nbsp;&nbsp; </span>
+                        <span *ngIf="createUserForm.value.jscheck" >Javascript  &nbsp;&nbsp; </span>
+                    </li>
+
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="saveUser(createUserForm.value)"
+                        data-bs-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->

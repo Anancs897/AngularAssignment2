@@ -1,0 +1,51 @@
+form{
+   
+    width: 70%;
+    margin: auto;
+}
+.maleGender{
+    padding-right: 5px;
+}
+
+/* .form-check-input{
+    border: 1px solid black;
+} */
+.dropdown-item{
+    cursor: pointer;
+}
+
+#female{
+    margin-bottom: 14px;
+}
+.err{
+    color: red;
+}
+
+.form-container{
+    border: 1px solid black;
+    margin: auto;
+    width: 70vw;
+    margin-bottom: 14px;
+    background-color: #c9c4c124;
+}
+.form-control{
+    width: 100%;
+}
+.my-img{
+    display: block;
+    width: 86%;
+   
+    margin: auto;
+}
+input[type="email"] {
+    background-color: white;
+  }
+  input[type="text"] {
+    background-color: white;
+  }
+  input[type="email"]:focus{
+    outline:0;
+    }
+    input[type="text"]:focus{
+        outline:0;
+        }

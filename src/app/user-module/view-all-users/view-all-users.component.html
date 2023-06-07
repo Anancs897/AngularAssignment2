@@ -1,0 +1,18 @@
+<div class="card  mb-4"   *ngFor="let user of myUserData">
+    <img [src]="user.userurl" class="card-img-top" alt="...">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Name :  &nbsp;&nbsp; {{user.name}} </li>
+      <li class="list-group-item">Gender :&nbsp; &nbsp;{{user.gender}}</li>
+      <li class="list-group-item"> Email :&nbsp;&nbsp; {{user.email}}</li>
+      <li class="list-group-item">Mobile :&nbsp;&nbsp; {{user.mobile}}</li>
+      <li class="list-group-item">Skills </li> 
+      <li class="list-group-item">
+        <span *ngIf="user.ccheck">C &nbsp;&nbsp; </span>
+        <span *ngIf="user.cpluscheck">C++ &nbsp;&nbsp; </span>
+        <span *ngIf="user.pythoncheck">Python &nbsp;&nbsp; </span>
+        <span *ngIf="user.javacheck">Java &nbsp;&nbsp; </span>
+        <span *ngIf="user.jscheck">Javascript &nbsp;&nbsp; </span>
+      </li>
+    </ul>
+      
+  </div >
